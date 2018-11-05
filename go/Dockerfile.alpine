@@ -2,8 +2,6 @@ FROM golang:alpine
 
 # Install VCS tools to support "go get" commands and install gcc.
 RUN apk add --update --no-cache git mercurial subversion openssh curl rsync build-base
-    rm -rf /var/lib/apt/lists/* && \
-    rm /var/cache/apk/* && \
     git config --global url."git@bitbucket.org:".insteadOf "https://bitbucket.org/" && \
     git config --global url."git@bitbucket.org:".insteadOf "https://api.bitbucket.org/" && \
     mkdir -p ~/.ssh && ssh-keyscan -H bitbucket.org >> ~/.ssh/known_hosts
