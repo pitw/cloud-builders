@@ -16,6 +16,9 @@
 . /builder/prepare_workspace.inc
 prepare_workspace || exit
 echo "Documentation at https://github.com/GoogleCloudPlatform/cloud-builders/blob/master/go/README.md"
+cat ~/.gitconfig
+[url "git@bitbucket.com:"]
+    insteadOf = https://bitbucket.com/
 if [[ "$1" == install ]]; then
   # Give a hint about where binaries end up if we think they're using 'go install'.
   gp=$(go env GOPATH)
